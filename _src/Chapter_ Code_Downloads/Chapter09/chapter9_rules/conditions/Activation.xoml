@@ -1,0 +1,9 @@
+﻿<SequentialWorkflowActivity      
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<WhileActivity>
+		<WhileActivity.Condition>
+			<RuleConditionReference ConditionName="Condition1" />
+		</WhileActivity.Condition>
+    <DelayActivity />
+	</WhileActivity>
+</SequentialWorkflowActivity>

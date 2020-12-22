@@ -1,0 +1,3 @@
+﻿<SequentialWorkflowActivity x:Class="chapter6_runtime.persist.WorkflowWithDelay2" x:Name="WorkflowWithDelay2" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<DelayActivity TimeoutDuration="00:00:10" x:Name="delayActivity1" />
+</SequentialWorkflowActivity>

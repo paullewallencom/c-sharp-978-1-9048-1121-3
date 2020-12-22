@@ -1,0 +1,8 @@
+﻿<SequentialWorkflowActivity x:Class="chapter9_rules.conditions.ConditionExamples" x:Name="ConditionExamples" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<WhileActivity x:Name="whileActivity1">
+		<WhileActivity.Condition>
+			<RuleConditionReference ConditionName="Condition7" />
+		</WhileActivity.Condition>
+		<DelayActivity TimeoutDuration="00:00:00" x:Name="delayActivity1" />
+	</WhileActivity>
+</SequentialWorkflowActivity>

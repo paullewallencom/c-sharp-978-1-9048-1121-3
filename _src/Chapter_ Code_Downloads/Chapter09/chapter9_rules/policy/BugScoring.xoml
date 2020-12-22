@@ -1,0 +1,7 @@
+﻿<SequentialWorkflowActivity x:Class="chapter9_rules.policy.BugScoring" x:Name="BugScoring" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<PolicyActivity x:Name="policyActivity1">
+		<PolicyActivity.RuleSetReference>
+			<RuleSetReference RuleSetName="BugScoring" />
+		</PolicyActivity.RuleSetReference>
+	</PolicyActivity>
+</SequentialWorkflowActivity>

@@ -1,0 +1,10 @@
+<SequentialWorkflowActivity 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:otc="http://schemas.OdeToCode.com/WinWF/Activities" 
+	x:Class="MyWorkflow"
+	>
+
+	<otc:WriteLineActivity Message="Hello, workflow!"/>
+
+</SequentialWorkflowActivity>

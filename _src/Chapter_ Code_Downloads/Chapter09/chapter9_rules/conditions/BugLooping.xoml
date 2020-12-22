@@ -1,0 +1,14 @@
+<SequentialWorkflowActivity 
+    x:Class="chapter9_rules.conditions.BugLooping" 
+    x:Name="BugLooping" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<WhileActivity x:Name="whileActivity1">
+		<WhileActivity.Condition>
+			<CodeCondition Condition="CheckBugIndex" />
+		</WhileActivity.Condition>
+		<CodeActivity x:Name="PrintBug" ExecuteCode="codeActivity1_ExecuteCode" />
+	</WhileActivity>
+</SequentialWorkflowActivity>
+
+

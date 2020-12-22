@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="System.Workflow.Activities.Rules.RuleSet">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+    <ShowAsCollectionAssociation>
+      <Property Name="Rules" />
+    </ShowAsCollectionAssociation>
+    <Members>
+      <Method Name="Clone" Hidden="true" />
+      <Method Name="Equals" Hidden="true" />
+      <Method Name="GetHashCode" Hidden="true" />
+      <Method Name="RuleSet" Hidden="true" />
+    </Members>
+  </Class>
+  <Class Name="System.Workflow.Activities.Rules.Rule">
+    <Position X="2.75" Y="1.25" Width="1.75" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Condition" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="ThenActions" />
+      <Property Name="ElseActions" />
+    </ShowAsCollectionAssociation>
+    <Members>
+      <Method Name="Clone" Hidden="true" />
+      <Method Name="Equals" Hidden="true" />
+      <Method Name="GetHashCode" Hidden="true" />
+      <Method Name="Rule" Hidden="true" />
+    </Members>
+    <AssociationLine Name="ElseActions" Type="System.Workflow.Activities.Rules.RuleAction" ManuallyRouted="true">
+      <Path>
+        <Point X="4.5" Y="1.665" />
+        <Point X="5.5" Y="1.665" />
+      </Path>
+    </AssociationLine>
+  </Class>
+  <Class Name="System.Workflow.Activities.Rules.RuleCondition">
+    <Position X="2.75" Y="3.5" Width="1.75" />
+    <TypeIdentifier />
+    <Members>
+      <Method Name="Clone" Hidden="true" />
+      <Method Name="OnRuntimeInitialized" Hidden="true" />
+    </Members>
+  </Class>
+  <Class Name="System.Workflow.Activities.Rules.RuleAction">
+    <Position X="5.5" Y="1.25" Width="1.75" />
+    <TypeIdentifier />
+    <Members>
+      <Method Name="Clone" Hidden="true" />
+      <Method Name="RuleAction" Hidden="true" />
+    </Members>
+  </Class>
+</ClassDiagram>

@@ -1,0 +1,10 @@
+﻿<SequentialWorkflowActivity x:Class="chapter3_sequential.WorkflowFault" x:Name="WorkflowFault" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<CodeActivity x:Name="codeActivity1" ExecuteCode="codeActivity1_ExecuteCode" />
+	<ThrowActivity x:Name="throwActivity1" FaultType="{x:Type p4:Exception,TypeName=System.Exception}" xmlns:p4="clr-namespace:System;Assembly=mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+	<FaultHandlersActivity x:Name="faultHandlersActivity1">
+		<FaultHandlerActivity x:Name="faultHandlerActivity2" Fault="{ActivityBind WorkflowFault,Path=fault}" FaultType="{x:Type p6:Exception,TypeName=System.Exception}" xmlns:p6="clr-namespace:System;Assembly=mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+			<CodeActivity x:Name="codeActivity2" ExecuteCode="codeActivity2_ExecuteCode" />
+			<ThrowActivity x:Name="throwActivity2" Fault="{ActivityBind WorkflowFault,Path=fault}" />
+		</FaultHandlerActivity>
+	</FaultHandlersActivity>
+</SequentialWorkflowActivity>

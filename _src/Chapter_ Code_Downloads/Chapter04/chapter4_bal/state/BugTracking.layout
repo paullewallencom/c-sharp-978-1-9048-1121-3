@@ -1,0 +1,94 @@
+﻿<StateMachineWorkflowDesigner xmlns:ns0="clr-namespace:System.Drawing;Assembly=System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Name="BugTracking" Location="30, 30" Size="509, 324" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<StateMachineWorkflowDesigner.DesignerConnectors>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="AssignedState" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setStateActivity4" SourceStateName="AssignedState" SourceConnectionEdge="Right" TargetActivity="AssignedState" SourceActivity="AssignedState" EventHandlerName="assignEvent3">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="182" Y="282" />
+				<ns0:Point X="238" Y="282" />
+				<ns0:Point X="238" Y="233" />
+				<ns0:Point X="150" Y="233" />
+				<ns0:Point X="150" Y="241" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="ClosedState" SourceConnectionIndex="1" TargetConnectionEdge="Top" SetStateName="setStateActivity5" SourceStateName="AssignedState" SourceConnectionEdge="Right" TargetActivity="ClosedState" SourceActivity="AssignedState" EventHandlerName="closedEvent1">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="182" Y="306" />
+				<ns0:Point X="242" Y="306" />
+				<ns0:Point X="242" Y="236" />
+				<ns0:Point X="429" Y="236" />
+				<ns0:Point X="429" Y="244" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="AssignedState" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setStateActivity3" SourceStateName="DeferredSate" SourceConnectionEdge="Right" TargetActivity="AssignedState" SourceActivity="DeferredSate" EventHandlerName="assignEvent2">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="392" Y="148" />
+				<ns0:Point X="446" Y="148" />
+				<ns0:Point X="446" Y="229" />
+				<ns0:Point X="150" Y="229" />
+				<ns0:Point X="150" Y="241" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="AssignedState" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setStateActivity1" SourceStateName="OpenState" SourceConnectionEdge="Right" TargetActivity="AssignedState" SourceActivity="OpenState" EventHandlerName="assignEvent1">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="184" Y="111" />
+				<ns0:Point X="238" Y="111" />
+				<ns0:Point X="238" Y="229" />
+				<ns0:Point X="150" Y="229" />
+				<ns0:Point X="150" Y="241" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="DeferredSate" SourceConnectionIndex="1" TargetConnectionEdge="Top" SetStateName="setStateActivity2" SourceStateName="OpenState" SourceConnectionEdge="Right" TargetActivity="DeferredSate" SourceActivity="OpenState" EventHandlerName="deferEvent1">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="177" Y="135" />
+				<ns0:Point X="244" Y="135" />
+				<ns0:Point X="244" Y="99" />
+				<ns0:Point X="360" Y="99" />
+				<ns0:Point X="360" Y="107" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+	</StateMachineWorkflowDesigner.DesignerConnectors>
+	<StateMachineWorkflowDesigner.Designers>
+		<StateDesigner Name="ClosedState" Location="349, 244" Size="160, 80" />
+		<StateDesigner Name="AssignedState" Location="70, 241" Size="160, 80" AutoSize="False">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 222" Name="assignEvent3" Location="78, 272">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handleExternalEventActivity4" Location="88, 344" />
+						<SetStateDesigner Size="90, 50" Name="setStateActivity4" Location="88, 414" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="110, 222" Name="closedEvent1" Location="78, 296">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handleExternalEventActivity5" Location="88, 368" />
+						<SetStateDesigner Size="90, 50" Name="setStateActivity5" Location="88, 438" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="DeferredSate" Location="280, 107" Size="160, 80">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 222" Name="assignEvent2" Location="288, 138">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handleExternalEventActivity3" Location="298, 210" />
+						<SetStateDesigner Size="90, 50" Name="setStateActivity3" Location="298, 280" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="OpenState" Location="72, 70" Size="160, 80">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 222" Name="assignEvent1" Location="80, 101">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handleExternalEventActivity1" Location="90, 173" />
+						<SetStateDesigner Size="90, 50" Name="setStateActivity1" Location="90, 243" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="110, 222" Name="deferEvent1" Location="80, 125">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handleExternalEventActivity2" Location="90, 197" />
+						<SetStateDesigner Size="90, 50" Name="setStateActivity2" Location="90, 267" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+	</StateMachineWorkflowDesigner.Designers>
+</StateMachineWorkflowDesigner>

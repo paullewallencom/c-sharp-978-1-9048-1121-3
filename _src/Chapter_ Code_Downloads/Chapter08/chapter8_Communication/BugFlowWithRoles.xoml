@@ -1,0 +1,19 @@
+﻿<SequentialWorkflowActivity x:Class="chapter8_Communication.BugFlowWithRoles" Initialized="BugFlowWithRoles_Initialized" x:Name="BugFlowWithRoles" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<CallExternalMethodActivity x:Name="callExternalMethodActivity1" InterfaceType="{x:Type chapter8_Communication.IBugVotingService}" MethodName="RequestVote">
+		<CallExternalMethodActivity.CorrelationToken>
+			<wf0:CorrelationToken Name="ctoken" OwnerActivityName="BugFlowWithRoles" xmlns:wf0="http://schemas.microsoft.com/winfx/2006/xaml/workflow" />
+		</CallExternalMethodActivity.CorrelationToken>
+		<CallExternalMethodActivity.ParameterBindings>
+			<WorkflowParameterBinding ParameterName="userName">
+				<WorkflowParameterBinding.Value>
+					<ns0:String xmlns:ns0="clr-namespace:System;Assembly=mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">bitmask</ns0:String>
+				</WorkflowParameterBinding.Value>
+			</WorkflowParameterBinding>
+		</CallExternalMethodActivity.ParameterBindings>
+	</CallExternalMethodActivity>
+	<HandleExternalEventActivity Roles="{ActivityBind BugFlowWithRoles,Path=validRoles}" x:Name="handleExternalEventActivity1" EventName="VoteCompleted" InterfaceType="{x:Type chapter8_Communication.IBugVotingService}">
+		<HandleExternalEventActivity.CorrelationToken>
+			<wf0:CorrelationToken Name="ctoken" OwnerActivityName="BugFlowWithRoles" xmlns:wf0="http://schemas.microsoft.com/winfx/2006/xaml/workflow" />
+		</HandleExternalEventActivity.CorrelationToken>
+	</HandleExternalEventActivity>
+</SequentialWorkflowActivity>

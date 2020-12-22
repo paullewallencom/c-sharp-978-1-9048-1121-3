@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="System.Workflow.Activities.StateMachineWorkflowActivity">
+    <Position X="0.75" Y="1" Width="2.5" />
+    <TypeIdentifier />
+    <Members>
+      <Method Name="StateMachineWorkflowActivity" Hidden="true" />
+    </Members>
+  </Class>
+  <Class Name="System.Workflow.Activities.StateActivity">
+    <Position X="3.75" Y="1.25" Width="2.75" />
+    <TypeIdentifier />
+    <Members>
+      <Method Name="StateActivity" Hidden="true" />
+    </Members>
+  </Class>
+</ClassDiagram>

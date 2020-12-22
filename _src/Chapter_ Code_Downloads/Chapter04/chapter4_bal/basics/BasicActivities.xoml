@@ -1,0 +1,25 @@
+﻿<SequentialWorkflowActivity x:Class="chapter4_bal.BasicActivities" x:Name="BasicActivities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<IfElseActivity x:Name="ifElseActivity1">
+		<IfElseBranchActivity x:Name="ifElseBranchActivity1">
+			<IfElseBranchActivity.Condition>
+				<RuleConditionReference ConditionName="Condition1" />
+			</IfElseBranchActivity.Condition>
+			<CodeActivity x:Name="codeActivity1" ExecuteCode="codeActivity1_ExecuteCode" />
+		</IfElseBranchActivity>
+		<IfElseBranchActivity x:Name="ifElseBranchActivity2">
+			<IfElseBranchActivity.Condition>
+				<CodeCondition Condition="checkSalesAmount" />
+			</IfElseBranchActivity.Condition>
+			<CodeActivity x:Name="codeActivity2" ExecuteCode="codeActivity2_ExecuteCode" />
+		</IfElseBranchActivity>
+	</IfElseActivity>
+	<WhileActivity x:Name="whileActivity1">
+		<WhileActivity.Condition>
+			<CodeCondition Condition="checkSalesAmount" />
+		</WhileActivity.Condition>
+		<SequenceActivity x:Name="sequenceActivity1">
+			<CodeActivity x:Name="codeActivity3" ExecuteCode="codeActivity3_ExecuteCode" />
+			<CodeActivity x:Name="codeActivity4" ExecuteCode="codeActivity4_ExecuteCode" />
+		</SequenceActivity>
+	</WhileActivity>
+</SequentialWorkflowActivity>

@@ -1,0 +1,20 @@
+﻿<SequentialWorkflowActivity x:Class="chapter4_bal.exceptions.Exceptions" x:Name="Exceptions" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<WhileActivity x:Name="whileActivity1">
+		<WhileActivity.Condition>
+			<RuleConditionReference ConditionName="Condition1" />
+		</WhileActivity.Condition>
+		<ThrowActivity x:Name="throwActivity1" />
+		<FaultHandlersActivity x:Name="faultHandlersActivity1">
+			<FaultHandlerActivity x:Name="faultHandlerActivity1" Fault="{x:Null}" FaultType="{x:Type p8:Exception,TypeName=System.Exception}" xmlns:p8="clr-namespace:System;Assembly=mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+				<CodeActivity x:Name="codeActivity1" ExecuteCode="codeActivity1_ExecuteCode" />
+			</FaultHandlerActivity>
+		</FaultHandlersActivity>
+	</WhileActivity>
+	<WhileActivity x:Name="whileActivity2">
+		<WhileActivity.Condition>
+			<RuleConditionReference ConditionName="Condition1" />
+		</WhileActivity.Condition>
+		<ThrowActivity x:Name="throwActivity2" />
+	</WhileActivity>
+	<FaultHandlersActivity x:Name="faultHandlersActivity2" />
+</SequentialWorkflowActivity>

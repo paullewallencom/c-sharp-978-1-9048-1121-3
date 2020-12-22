@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="System.Workflow.Activities.StateMachineWorkflowInstance">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+</ClassDiagram>

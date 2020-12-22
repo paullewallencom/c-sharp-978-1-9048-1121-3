@@ -1,0 +1,4 @@
+﻿<SequentialWorkflowActivity x:Class="chapter3_sequential.WorkflowEvents" x:Name="WorkflowEvents" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<CodeActivity x:Name="codeActivity1" ExecuteCode="codeActivity1_ExecuteCode" />
+	<SuspendActivity x:Name="suspendActivity1" Error="intentionally suspended" />
+</SequentialWorkflowActivity>

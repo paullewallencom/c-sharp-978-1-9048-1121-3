@@ -1,0 +1,18 @@
+﻿<SequentialWorkflowActivity x:Class="chapter9_rules.conditions.BugNotification" x:Name="BugNotification" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<WhileActivity x:Name="whileActivity1">
+		<WhileActivity.Condition>
+			<RuleConditionReference ConditionName="RetryCountCondition" />
+		</WhileActivity.Condition>
+		<SequenceActivity x:Name="sequenceActivity1">
+			<CodeActivity x:Name="SendNotification" ExecuteCode="codeActivity1_ExecuteCode" />
+			<IfElseActivity x:Name="ifElseActivity1">
+				<IfElseBranchActivity x:Name="ifElseBranchActivity1">
+					<IfElseBranchActivity.Condition>
+						<RuleConditionReference ConditionName="NotificationSent" />
+					</IfElseBranchActivity.Condition>
+					<DelayActivity TimeoutDuration="00:00:00" x:Name="delayActivity1" />
+				</IfElseBranchActivity>
+			</IfElseActivity>
+		</SequenceActivity>		
+	</WhileActivity>
+</SequentialWorkflowActivity>

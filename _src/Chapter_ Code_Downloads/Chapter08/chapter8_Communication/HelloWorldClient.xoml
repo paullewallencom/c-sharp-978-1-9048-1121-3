@@ -1,0 +1,16 @@
+﻿<SequentialWorkflowActivity x:Class="chapter8_Communication.HelloWorldClient" x:Name="HelloWorldClient" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<InvokeWebServiceActivity ProxyClass="{x:Type chapter8_Communication.HelloWorldService.HelloWorldWorkflow_WebService}" Invoked="invokeHelloWorld_Invoked" MethodName="GetHelloWorldMessage" x:Name="invokeHelloWorld">
+		<InvokeWebServiceActivity.ParameterBindings>
+			<WorkflowParameterBinding ParameterName="name">
+				<WorkflowParameterBinding.Value>
+					<ns0:String xmlns:ns0="clr-namespace:System;Assembly=mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">"Scott"</ns0:String>
+				</WorkflowParameterBinding.Value>
+			</WorkflowParameterBinding>
+			<WorkflowParameterBinding ParameterName="(ReturnValue)">
+				<WorkflowParameterBinding.Value>
+					<ActivityBind Name="HelloWorldClient" Path="_helloWorldResult" />
+				</WorkflowParameterBinding.Value>
+			</WorkflowParameterBinding>
+		</InvokeWebServiceActivity.ParameterBindings>
+	</InvokeWebServiceActivity>
+</SequentialWorkflowActivity>

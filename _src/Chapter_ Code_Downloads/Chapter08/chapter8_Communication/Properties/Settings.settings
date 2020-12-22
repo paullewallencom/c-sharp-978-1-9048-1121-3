@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="chapter8_Communication.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="chapter8_Communication_HelloWorldService_HelloWorldWorkflow_WebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:1069/Chapter8_WebService_WebService/Chapter8_WebService.HelloWorldWorkflow_WebService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="System.Workflow.Activities.CodeCondition">
+    <Position X="0.75" Y="2.5" Width="2" />
+    <TypeIdentifier />
+    <Members>
+      <Method Name="CodeCondition" Hidden="true" />
+      <Field Name="ConditionEvent" Hidden="true" />
+      <Method Name="GetBoundValue" Hidden="true" />
+    </Members>
+  </Class>
+  <Class Name="System.Workflow.ComponentModel.ActivityCondition">
+    <Position X="1.75" Y="0.75" Width="2" />
+    <TypeIdentifier />
+    <Members>
+      <Method Name="ActivityCondition" Hidden="true" />
+    </Members>
+  </Class>
+  <Class Name="System.Workflow.Activities.Rules.RuleConditionReference">
+    <Position X="3" Y="2.5" Width="2" />
+    <TypeIdentifier />
+    <Members>
+      <Method Name="InitializeProperties" Hidden="true" />
+      <Method Name="RuleConditionReference" Hidden="true" />
+    </Members>
+    <InheritanceLine Type="System.Workflow.ComponentModel.ActivityCondition" FixedFromPoint="true">
+      <Path>
+        <Point X="2.875" Y="1.851" />
+        <Point X="2.875" Y="2.125" />
+        <Point X="4" Y="2.125" />
+        <Point X="4" Y="2.5" />
+      </Path>
+    </InheritanceLine>
+  </Class>
+</ClassDiagram>

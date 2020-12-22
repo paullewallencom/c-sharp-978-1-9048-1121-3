@@ -1,0 +1,39 @@
+﻿<SequentialWorkflowActivity x:Class="chapter4_bal.ws.WebServices" x:Name="WebServices" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<WebServiceInputActivity x:Name="webServiceInputActivity1" MethodName="RequestUpload" InterfaceType="{x:Type chapter4_bal.IBugService,TypeName=chapter4_bal.IBugService}" IsActivating="True">
+		<WebServiceInputActivity.ParameterBindings>
+			<WorkflowParameterBinding ParameterName="id">
+				<WorkflowParameterBinding.Value>
+					<ActivityBind Name="WebServices" Path="webServiceInputActivity1_id1" />
+				</WorkflowParameterBinding.Value>
+			</WorkflowParameterBinding>
+			<WorkflowParameterBinding ParameterName="userName">
+				<WorkflowParameterBinding.Value>
+					<ActivityBind Name="WebServices" Path="webServiceInputActivity1_userName1" />
+				</WorkflowParameterBinding.Value>
+			</WorkflowParameterBinding>
+		</WebServiceInputActivity.ParameterBindings>
+	</WebServiceInputActivity>
+	<InvokeWebServiceActivity Invoking="invokeWebServiceActivity1_Invoking" ProxyClass="{x:Type chapter4_bal.com.msn.search.soap.MSNSearchService,TypeName=chapter4_bal.com.msn.search.soap.MSNSearchService}" Invoked="invokeWebServiceActivity1_Invoked" MethodName="Search" x:Name="invokeWebServiceActivity1">
+		<InvokeWebServiceActivity.ParameterBindings>
+			<WorkflowParameterBinding ParameterName="(ReturnValue)">
+				<WorkflowParameterBinding.Value>
+					<ActivityBind Name="WebServices" Path="invokeWebServiceActivity1__ReturnValue_1" />
+				</WorkflowParameterBinding.Value>
+			</WorkflowParameterBinding>
+			<WorkflowParameterBinding ParameterName="Request">
+				<WorkflowParameterBinding.Value>
+					<ActivityBind Name="WebServices" Path="invokeWebServiceActivity1_Request1" />
+				</WorkflowParameterBinding.Value>
+			</WorkflowParameterBinding>
+		</InvokeWebServiceActivity.ParameterBindings>
+	</InvokeWebServiceActivity>
+	<WebServiceOutputActivity x:Name="webServiceOutputActivity1" InputActivityName="webServiceInputActivity1">
+		<WebServiceOutputActivity.ParameterBindings>
+			<WorkflowParameterBinding ParameterName="(ReturnValue)">
+				<WorkflowParameterBinding.Value>
+					<ns0:Boolean xmlns:ns0="clr-namespace:System;Assembly=mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">false</ns0:Boolean>
+				</WorkflowParameterBinding.Value>
+			</WorkflowParameterBinding>
+		</WebServiceOutputActivity.ParameterBindings>
+	</WebServiceOutputActivity>
+</SequentialWorkflowActivity>

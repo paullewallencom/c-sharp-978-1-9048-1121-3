@@ -1,0 +1,20 @@
+﻿<SequentialWorkflowActivity x:Class="chapter9_rules.cag.BasicCag" x:Name="BasicCag" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<ConditionedActivityGroup x:Name="conditionedActivityGroup1">
+		<ConditionedActivityGroup.UntilCondition>
+			<RuleConditionReference ConditionName="CountGreaterThan80" />
+		</ConditionedActivityGroup.UntilCondition>
+		<SequenceActivity x:Name="sequenceActivity1">
+			<ConditionedActivityGroup.WhenCondition>
+				<RuleConditionReference ConditionName="DivisibleByTwo" />
+			</ConditionedActivityGroup.WhenCondition>
+			<CodeActivity x:Name="codeActivity1" ExecuteCode="codeActivity_ExecuteCode" />
+			<CodeActivity x:Name="codeActivity2" ExecuteCode="codeActivity_ExecuteCode" />
+		</SequenceActivity>
+		<CodeActivity x:Name="codeActivity3" ExecuteCode="codeActivity_ExecuteCode">
+			<ConditionedActivityGroup.WhenCondition>
+				<RuleConditionReference ConditionName="DivisibleByOne" />
+			</ConditionedActivityGroup.WhenCondition>
+		</CodeActivity>
+		<CodeActivity x:Name="codeActivity4" ExecuteCode="codeActivity_ExecuteCode" />
+	</ConditionedActivityGroup>
+</SequentialWorkflowActivity>

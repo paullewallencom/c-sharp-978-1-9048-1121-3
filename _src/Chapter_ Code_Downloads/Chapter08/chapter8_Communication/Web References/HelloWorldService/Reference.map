@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://localhost:1069/Chapter8_WebService_WebService/Chapter8_WebService.HelloWorldWorkflow_WebService.asmx?wsdl" filename="Chapter8_WebService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://localhost:1069/Chapter8_WebService_WebService/Chapter8_WebService.HelloWorldWorkflow_WebService.asmx?disco" filename="Chapter8_WebService.disco" />
+  </Results>
+</DiscoveryClientResultsFile>

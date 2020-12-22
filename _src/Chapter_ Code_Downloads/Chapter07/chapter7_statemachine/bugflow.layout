@@ -1,0 +1,162 @@
+﻿<StateMachineWorkflowDesigner xmlns:ns0="clr-namespace:System.Drawing;Assembly=System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Name="BugFlow" Location="30, 30" Size="493, 640" AutoSizeMargin="16, 24" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<StateMachineWorkflowDesigner.DesignerConnectors>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="BugOpenState" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setBugOpenedState" SourceStateName="BugFlowInitialState" SourceConnectionEdge="Right" TargetActivity="BugOpenState" SourceActivity="BugFlowInitialState" EventHandlerName="OnBugOpened">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="174" Y="110" />
+				<ns0:Point X="226" Y="110" />
+				<ns0:Point X="226" Y="66" />
+				<ns0:Point X="395" Y="66" />
+				<ns0:Point X="395" Y="74" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="BugAssignedState" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setStateActivity1" SourceStateName="BugOpenState" SourceConnectionEdge="Right" TargetActivity="BugAssignedState" SourceActivity="BugOpenState" EventHandlerName="OnBugAssigned">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="441" Y="115" />
+				<ns0:Point X="483" Y="115" />
+				<ns0:Point X="483" Y="251" />
+				<ns0:Point X="355" Y="251" />
+				<ns0:Point X="355" Y="263" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="BugClosedState" SourceConnectionIndex="1" TargetConnectionEdge="Top" SetStateName="setStateActivity2" SourceStateName="BugOpenState" SourceConnectionEdge="Right" TargetActivity="BugClosedState" SourceActivity="BugOpenState" EventHandlerName="OnBugClosed">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="430" Y="139" />
+				<ns0:Point X="486" Y="139" />
+				<ns0:Point X="486" Y="409" />
+				<ns0:Point X="326" Y="409" />
+				<ns0:Point X="326" Y="421" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="BugDeferredState" SourceConnectionIndex="2" TargetConnectionEdge="Top" SetStateName="setStateActivity3" SourceStateName="BugOpenState" SourceConnectionEdge="Right" TargetActivity="BugDeferredState" SourceActivity="BugOpenState" EventHandlerName="OnBugDeferred">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="439" Y="163" />
+				<ns0:Point X="486" Y="163" />
+				<ns0:Point X="486" Y="392" />
+				<ns0:Point X="126" Y="392" />
+				<ns0:Point X="126" Y="404" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="BugClosedState" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setStateActivity7" SourceStateName="BugResolvedState" SourceConnectionEdge="Right" TargetActivity="BugClosedState" SourceActivity="BugResolvedState" EventHandlerName="OnBugClosed2">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="173" Y="277" />
+				<ns0:Point X="224" Y="277" />
+				<ns0:Point X="224" Y="409" />
+				<ns0:Point X="326" Y="409" />
+				<ns0:Point X="326" Y="421" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="BugAssignedState" SourceConnectionIndex="1" TargetConnectionEdge="Top" SetStateName="setStateActivity8" SourceStateName="BugResolvedState" SourceConnectionEdge="Right" TargetActivity="BugAssignedState" SourceActivity="BugResolvedState" EventHandlerName="OnBugAssigned2">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="184" Y="301" />
+				<ns0:Point X="224" Y="301" />
+				<ns0:Point X="224" Y="255" />
+				<ns0:Point X="355" Y="255" />
+				<ns0:Point X="355" Y="263" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="BugResolvedState" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setStateActivity4" SourceStateName="BugAssignedState" SourceConnectionEdge="Right" TargetActivity="BugResolvedState" SourceActivity="BugAssignedState" EventHandlerName="OnBugResolved">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="402" Y="304" />
+				<ns0:Point X="444" Y="304" />
+				<ns0:Point X="444" Y="228" />
+				<ns0:Point X="132" Y="228" />
+				<ns0:Point X="132" Y="236" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="BugDeferredState" SourceConnectionIndex="1" TargetConnectionEdge="Top" SetStateName="setStateActivity5" SourceStateName="BugAssignedState" SourceConnectionEdge="Right" TargetActivity="BugDeferredState" SourceActivity="BugAssignedState" EventHandlerName="OnBugDeferred2">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="405" Y="328" />
+				<ns0:Point X="446" Y="328" />
+				<ns0:Point X="446" Y="392" />
+				<ns0:Point X="126" Y="392" />
+				<ns0:Point X="126" Y="404" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="BugAssignedState" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setStateActivity6" SourceStateName="BugDeferredState" SourceConnectionEdge="Right" TargetActivity="BugAssignedState" SourceActivity="BugDeferredState" EventHandlerName="OnBugAssigned3">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="178" Y="445" />
+				<ns0:Point X="218" Y="445" />
+				<ns0:Point X="218" Y="255" />
+				<ns0:Point X="355" Y="255" />
+				<ns0:Point X="355" Y="263" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+	</StateMachineWorkflowDesigner.DesignerConnectors>
+	<StateMachineWorkflowDesigner.Designers>
+		<StateDesigner Name="BugFlowInitialState" Location="54, 69" Size="160, 80" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 222" Name="OnBugOpened" Location="62, 100">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handleBugOpenedEvent" Location="72, 172" />
+						<SetStateDesigner Size="90, 50" Name="setBugOpenedState" Location="72, 242" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="BugOpenState" Location="315, 74" Size="160, 118" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 222" Name="OnBugAssigned" Location="323, 105">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handleExternalEventActivity1" Location="333, 177" />
+						<SetStateDesigner Size="90, 50" Name="setStateActivity1" Location="333, 247" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="110, 222" Name="OnBugClosed" Location="323, 129">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handleExternalEventActivity2" Location="333, 201" />
+						<SetStateDesigner Size="90, 50" Name="setStateActivity2" Location="333, 271" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="110, 222" Name="OnBugDeferred" Location="323, 153">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handleExternalEventActivity3" Location="333, 225" />
+						<SetStateDesigner Size="90, 50" Name="setStateActivity3" Location="333, 295" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="BugResolvedState" Location="52, 236" Size="160, 94" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 222" Name="OnBugClosed2" Location="60, 267">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handleExternalEventActivity7" Location="70, 339" />
+						<SetStateDesigner Size="90, 50" Name="setStateActivity7" Location="70, 409" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="110, 222" Name="OnBugAssigned2" Location="60, 291">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handleExternalEventActivity8" Location="70, 363" />
+						<SetStateDesigner Size="90, 50" Name="setStateActivity8" Location="70, 433" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="BugClosedState" Location="246, 421" Size="160, 80" AutoSizeMargin="16, 24" />
+		<StateDesigner Name="BugAssignedState" Location="275, 263" Size="160, 94" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 222" Name="OnBugResolved" Location="283, 294">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handleExternalEventActivity4" Location="293, 366" />
+						<SetStateDesigner Size="90, 50" Name="setStateActivity4" Location="293, 436" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="110, 222" Name="OnBugDeferred2" Location="283, 318">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handleExternalEventActivity5" Location="293, 390" />
+						<SetStateDesigner Size="90, 50" Name="setStateActivity5" Location="293, 460" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="BugDeferredState" Location="46, 404" Size="160, 80" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="110, 222" Name="OnBugAssigned3" Location="54, 435">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="90, 40" Name="handleExternalEventActivity6" Location="64, 507" />
+						<SetStateDesigner Size="90, 50" Name="setStateActivity6" Location="64, 577" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+	</StateMachineWorkflowDesigner.Designers>
+</StateMachineWorkflowDesigner>

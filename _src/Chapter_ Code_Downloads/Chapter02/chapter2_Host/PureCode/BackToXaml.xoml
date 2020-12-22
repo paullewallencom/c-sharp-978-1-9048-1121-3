@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns0:MyWorkflow 
+	x:Name="MyWorkflow" 
+	xmlns:ns1="http://schemas.OdeToCode.com/WinWF/Activities" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+	xmlns:ns0="clr-namespace:PureCode;Assembly=chapter2_Host">
+	<ns1:WriteLineActivity 
+		Message="Hello, Workflow" 
+		x:Name="writeLineActivity1" 
+	/>
+</ns0:MyWorkflow>

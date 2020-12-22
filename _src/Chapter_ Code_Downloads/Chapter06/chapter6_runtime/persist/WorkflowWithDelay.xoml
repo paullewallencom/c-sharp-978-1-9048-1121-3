@@ -1,0 +1,14 @@
+<SequentialWorkflowActivity 
+      x:Class="chapter6_runtime.WorkflowWithDelay" 
+      x:Name="WorkflowWithDelay" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	
+  <CodeActivity x:Name="codeActivity1" 
+                ExecuteCode="codeActivity_ExecuteCode" />
+  <DelayActivity x:Name="delayActivity1"
+                 TimeoutDuration="00:00:10" />
+  <CodeActivity x:Name="codeActivity2" 
+                ExecuteCode="codeActivity_ExecuteCode" />
+  
+</SequentialWorkflowActivity>

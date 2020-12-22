@@ -1,0 +1,9 @@
+﻿<SequentialWorkflowActivity x:Class="chapter4_bal.transactions.Transactions" x:Name="Transactions" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<TransactionScopeActivity x:Name="transactionScopeActivity1">
+		<TransactionScopeActivity.TransactionOptions>
+			<WorkflowTransactionOptions TimeoutDuration="00:00:30" IsolationLevel="Serializable" />
+		</TransactionScopeActivity.TransactionOptions>
+		<CodeActivity x:Name="codeActivity2" ExecuteCode="codeActivity1_ExecuteCode" />
+		<CodeActivity x:Name="codeActivity1" ExecuteCode="codeActivity1_ExecuteCode" />
+	</TransactionScopeActivity>
+</SequentialWorkflowActivity>

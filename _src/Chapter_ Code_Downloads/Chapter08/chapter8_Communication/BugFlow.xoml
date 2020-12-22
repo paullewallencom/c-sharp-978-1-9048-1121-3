@@ -1,0 +1,42 @@
+<SequentialWorkflowActivity x:Class="chapter8_Communication.BugFlow" x:Name="BugFlow" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<ParallelActivity x:Name="parallelActivity1">
+		<SequenceActivity x:Name="GetTechLeadVote">
+			<CallExternalMethodActivity x:Name="CallRequestVote" InterfaceType="{x:Type chapter8_Communication.IBugVotingService}" MethodName="RequestVote">
+				<CallExternalMethodActivity.CorrelationToken>
+					<wf0:CorrelationToken Name="TechLead" OwnerActivityName="GetTechLeadVote" xmlns:wf0="http://schemas.microsoft.com/winfx/2006/xaml/workflow" />
+				</CallExternalMethodActivity.CorrelationToken>
+				<CallExternalMethodActivity.ParameterBindings>
+					<WorkflowParameterBinding ParameterName="userName">
+						<WorkflowParameterBinding.Value>
+							<ns0:String xmlns:ns0="clr-namespace:System;Assembly=mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">"Sue the tech lead"</ns0:String>
+						</WorkflowParameterBinding.Value>
+					</WorkflowParameterBinding>
+				</CallExternalMethodActivity.ParameterBindings>
+			</CallExternalMethodActivity>
+			<HandleExternalEventActivity Invoked="HandleVoteCompleted_Invoked" x:Name="HandleVoteCompleted" EventName="VoteCompleted" InterfaceType="{x:Type chapter8_Communication.IBugVotingService}">
+				<HandleExternalEventActivity.CorrelationToken>
+					<wf0:CorrelationToken Name="TechLead" OwnerActivityName="GetTechLeadVote" xmlns:wf0="http://schemas.microsoft.com/winfx/2006/xaml/workflow" />
+				</HandleExternalEventActivity.CorrelationToken>
+			</HandleExternalEventActivity>
+		</SequenceActivity>
+		<SequenceActivity x:Name="GetAnalystVote">
+			<CallExternalMethodActivity x:Name="CallRequestVote2" InterfaceType="{x:Type chapter8_Communication.IBugVotingService}" MethodName="RequestVote">
+				<CallExternalMethodActivity.CorrelationToken>
+					<wf0:CorrelationToken Name="Analyst" OwnerActivityName="GetAnalystVote" xmlns:wf0="http://schemas.microsoft.com/winfx/2006/xaml/workflow" />
+				</CallExternalMethodActivity.CorrelationToken>
+				<CallExternalMethodActivity.ParameterBindings>
+					<WorkflowParameterBinding ParameterName="userName">
+						<WorkflowParameterBinding.Value>
+							<ns0:String xmlns:ns0="clr-namespace:System;Assembly=mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">"Tim the analyst"</ns0:String>
+						</WorkflowParameterBinding.Value>
+					</WorkflowParameterBinding>
+				</CallExternalMethodActivity.ParameterBindings>
+			</CallExternalMethodActivity>
+			<HandleExternalEventActivity Invoked="HandleVoteCompleted2_Invoked" x:Name="HandleVoteCompleted2" EventName="VoteCompleted" InterfaceType="{x:Type chapter8_Communication.IBugVotingService}">
+				<HandleExternalEventActivity.CorrelationToken>
+					<wf0:CorrelationToken Name="Analyst" OwnerActivityName="GetAnalystVote" xmlns:wf0="http://schemas.microsoft.com/winfx/2006/xaml/workflow" />
+				</HandleExternalEventActivity.CorrelationToken>
+			</HandleExternalEventActivity>
+		</SequenceActivity>
+	</ParallelActivity>
+</SequentialWorkflowActivity>

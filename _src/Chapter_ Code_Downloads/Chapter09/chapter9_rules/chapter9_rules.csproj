@@ -1,0 +1,137 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6EAAC1BA-F4B1-4883-A336-34890B44D9B1}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>chapter9_rules</RootNamespace>
+    <AssemblyName>chapter9_rules</AssemblyName>
+    <ProjectTypeGuids>{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cag\BasicCag.xoml.cs">
+      <DependentUpon>BasicCag.xoml</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cag\CagDriver.cs" />
+    <Compile Include="conditions\ActivationDriver.cs" />
+    <Compile Include="conditions\BugLooping.xoml.cs">
+      <DependentUpon>BugLooping.xoml</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="conditions\BugLoopingDriver.cs" />
+    <Compile Include="conditions\BugNotification.xoml.cs">
+      <DependentUpon>BugNotification.xoml</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="conditions\BugNotificationDriver.cs" />
+    <Compile Include="conditions\ConditionExamples.xoml.cs">
+      <DependentUpon>ConditionExamples.xoml</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="policy\BugDetails.cs" />
+    <Compile Include="policy\BugScoring.xoml.cs">
+      <DependentUpon>BugScoring.xoml</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="policy\BugScoringDriver.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Program.cs" />
+    <None Include="App.config" />
+    <None Include="conditions\Conditions.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cag\BasicCag.xoml">
+      <SubType>Component</SubType>
+    </Content>
+    <EmbeddedResource Include="conditions\Activation.rules" />
+    <None Include="conditions\Activation.xoml">
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="policy\RuleSet.cd" />
+    <Content Include="conditions\BugLooping.xoml">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="conditions\BugNotification.xoml">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="conditions\ConditionExamples.xoml">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="policy\BugScoring.xoml">
+      <SubType>Component</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BugTrackingServices\BugTrackingServices.csproj">
+      <Project>{EC2CE44C-02FF-49F3-9038-AAF95CDF358B}</Project>
+      <Name>BugTrackingServices</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cag\basiccag.rules">
+      <DependentUpon>BasicCag.xoml</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="conditions\BugNotification.rules">
+      <DependentUpon>BugNotification.xoml</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="conditions\ConditionExamples.rules">
+      <DependentUpon>ConditionExamples.xoml</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="policy\BugScoring.rules">
+      <DependentUpon>BugScoring.xoml</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Windows Workflow Foundation\v3.0\Workflow.Targets" />
+</Project>

@@ -1,0 +1,7 @@
+﻿<SequentialWorkflowActivity 
+	x:Class="chapter6_runtime.SimpleWorkflow" 
+	x:Name="SimpleWorkflow" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<CodeActivity x:Name="codeActivity1" ExecuteCode="codeActivity1_ExecuteCode" />
+</SequentialWorkflowActivity>

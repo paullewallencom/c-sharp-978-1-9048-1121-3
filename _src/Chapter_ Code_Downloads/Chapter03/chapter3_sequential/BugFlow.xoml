@@ -1,0 +1,20 @@
+﻿<SequentialWorkflowActivity x:Class="chapter3_sequential.BugFlow" x:Name="BugFlow" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<HandleExternalEventActivity x:Name="NewBug" EventName="BugAdded" InterfaceType="{x:Type chapter3.IBugFlowService,TypeName=chapter3.IBugFlowService}">
+		<HandleExternalEventActivity.ParameterBindings>
+			<WorkflowParameterBinding ParameterName="e">
+				<WorkflowParameterBinding.Value>
+					<ActivityBind Name="BugFlow" Path="_newBug" />
+				</WorkflowParameterBinding.Value>
+			</WorkflowParameterBinding>
+		</HandleExternalEventActivity.ParameterBindings>
+	</HandleExternalEventActivity>
+	<CallExternalMethodActivity x:Name="AssignBug" InterfaceType="{x:Type chapter3.IBugFlowService,TypeName=chapter3.IBugFlowService}" MethodInvoking="CallAssignBug_MethodInvoking" MethodName="AssignBug">
+		<CallExternalMethodActivity.ParameterBindings>
+			<WorkflowParameterBinding ParameterName="bug">
+				<WorkflowParameterBinding.Value>
+					<ActivityBind Name="BugFlow" Path="_newBug.NewBug" />
+				</WorkflowParameterBinding.Value>
+			</WorkflowParameterBinding>
+		</CallExternalMethodActivity.ParameterBindings>
+	</CallExternalMethodActivity>
+</SequentialWorkflowActivity>
